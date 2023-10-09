@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>MAIN</h1>
+    <!-- JavaScript for controlling music -->
+    <script>
+        // Function to stop music
+        function stopMusic() {
+            var audioElement = document.getElementById("musicPlayer");
+            audioElement.pause();
+        }
+
+        // Function to play music based on query parameter
+        function playMusicFromQueryParameter() {
+            var params = new URLSearchParams(window.location.search);
+            var musicToPlay = params.get("music");
+
+            if (musicToPlay) {
+                // Set the source of the audio player
+                var audioElement = document.getElementById("musicPlayer");
+                audioElement.src = musicToPlay;
+                
+                // Play the specified music
+                audioElement.play();
+            }
+        }
+
+        // Automatically play the music based on the query parameter
+        window.addEventListener("load", playMusicFromQueryParameter);
+    </script>
+
+    <!-- Audio player with controls -->
+    <audio id="musicPlayer" >
+        <!-- Initially, no source is set. It will be set dynamically based on the query parameter. -->
+    </audio><br>
+
+    <!-- Link to stop the music -->
+    <a href="javascript:void(0);" onclick="playMusicFromQueryParameter()">Play Music</a><br>
+    <a href="javascript:void(0);" onclick="stopMusic()">Pause Music</a><br>
+    <a href="index1.html?music=song3.mp3">MUSIC</a><br>
+    <a href="login1.html">LOGIN</a>
+</body>
+</html>

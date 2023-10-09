@@ -1,0 +1,10 @@
+html {
+    scroll-behavior: smooth;
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+body {
+    /* margin: 0 auto; */
+    background-color: rgba(89, 99, 234, 0.968);
+    background: linear-gradient(to right,rgba(129, 137, 247, 0.968),rgb(42, 42, 247));
+}

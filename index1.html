@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA Compatible " content="ie=edge"/>
+    <title>Song Selection and Link Example</title>
+    <style>
+        /* Style the audio player container */
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the audio player */
+        audio {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        /* Style the play/pause button */
+        audio::-webkit-media-controls-play-button {
+            background-color: #22ffb2;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        /* Style the play/pause button icon */
+        audio::-webkit-media-controls-play-button::before {
+            content: '\25B6'; /* Play icon */
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Style the volume slider */
+        audio::-webkit-media-controls-volume-slider {
+            background-color: #ccc;
+            height: 5px;
+            border-radius: 2px;
+        }
+
+        /* Style the progress bar */
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: rgb(22, 21, 21);
+        }
+    </style>
+        
+    
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+    <!-- Video background -->
+    <!-- <video autoplay muted loop style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="https://media.istockphoto.com/id/1290029022/video/woman-running-at-treadmill-new-normal-and-modern-gym.mp4?s=mp4-640x640-is&k=20&c=KXXrRPhxL3DuhAo4s_Q4uoGXmqJmUvL9MRjMNFaLBSY=" type="video/mp4">
+         Add additional source elements for different video formats 
+    </video> -->
+    <div style="position: relative; z-index: 1;  color: #fff; padding: 20px;">
+        
+    <h1 style ="color: black;"><b>FITBIT</b>:Music</h1>
+    <div style="text-align: right">
+        <select id="songSelector"  style="width: 1000px; font-size:medium ; padding: 10px; color:aliceblue; background-color: #053154; border: 10px solid #cccccc; box-shadow: 12px 12px 15px #999c9c;">
+            <option value="song1.mpeg" style="padding: 20px">Song 1</option><br>
+            <option value="song2.mp3" style="padding: 20px" >Song 2</option><br>
+            <option value="song3.mp3"style="padding: 20px">Song 3</option><br>
+            <option value="song4.mp3"style="padding: 20px">Song 4</option><br>
+            <option value="song5.mp3"style="padding: 20px">Song 5</option><br>
+            <option value="song6.mp3"style="padding: 20px">Song 6</option><br>
+            <option value="song7.mp3"style="padding: 20px">Song 7</option><br>
+            <!-- Add more options for other songs as needed -->
+        </select><br>
+    </div>
+   
+    <audio id="song1" controls loop>
+        <source src="song1.mpeg" type="audio/mpeg">
+    </audio><br>
+    <audio id="song2" controls loop>
+        <source src="song2.mp3" type="audio/mpeg">
+    </audio><br>
+    <audio id="song3" controls loop>
+        <source src="song3.mp3" type="audio/mpeg">
+    </audio><br>
+    <audio id="song4" controls loop>
+        <source src="song4.mp3" type="audio/mpeg">
+    </audio><br>
+    <audio id="song5" controls loop>
+        <source src="song5.mp3" type="audio/mpeg">
+    </audio><br>
+    <audio id="song6" controls loop>
+        <source src="song6.mp3" type="audio/mpeg">
+    </audio><br>
+    <audio id="song7" controls loop>
+        <source src="song7.mp3" type="audio/mpeg">
+    </audio><br>
+    
+    
+    <!-- Select element to choose a song -->
+    <div id="dynamicLinkContainer" style="color: black;font-size: large bold;width: 70px;padding:15px; background-color: #fff;"></div>
+
+    <script>
+        // JavaScript to create a dynamic link with the selected song
+        var songSelector = document.getElementById("songSelector");
+        var dynamicLinkContainer = document.getElementById("dynamicLinkContainer");
+
+        // Event listener to update the link when a song is selected
+        songSelector.addEventListener("change", function() {
+            var selectedSong = songSelector.value;
+            var dynamicLink = document.createElement("a");
+            dynamicLink.textContent = "HOME";
+            dynamicLink.href = "fitnessback.html?music=" + encodeURIComponent(selectedSong);
+            dynamicLinkContainer.innerHTML = ''; // Clear previous links
+            dynamicLinkContainer.appendChild(dynamicLink);
+        });
+    </script>
+</div>
+</body>
+</html>

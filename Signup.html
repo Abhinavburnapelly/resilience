@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sign.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <title>Sign up</title>
+    <meta>
+</head>
+
+<body style="background-image: url(./loginimg.jpg);">
+    <div class="d-flex flex-row justify-content-end">
+        <form action="" method="get" >
+        
+        <div class="container">
+            <h1>signUp form</h1>
+            
+            <label>username</label><input id="name" type="name" name="name" required placeholder="Enter Username" >
+            <label>email</label><input id="email" type="name" name="name" required placeholder="Enter Email" >
+            <label >password</label><input type="password" name="pass" id="password" required placeholder="Set a Password" >
+            <br>
+            <label >confrim password</label><input type="password" name="cpass" id="cpass" required placeholder="Confrim Password" >
+            <br>
+            <label >phone number</label><input type="number" name="number" id="number" required placeholder="Enter Number" >
+            <br>
+            <p>Gender</p>
+
+            <form>
+
+                <input type="radio" id="male" name="name" value="yes">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="name" value="no">
+                <label for="female">Female</label><br>
+            </form>
+
+            <div class="sub">
+                <button type="button" id="register" name="register" style="margin-top: 30px;"> signUp</button>
+            </div>
+           
+            </div>
+        </form>
+    </div>
+    <script type="module">
+	    // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyALu-r9HQm7hBpWC7mD03mHgJghhbTYbGU",
+        authDomain: "resilience-fit.firebaseapp.com",
+        projectId: "resilience-fit",
+        storageBucket: "resilience-fit.appspot.com",
+        messagingSenderId: "642372080719",
+        appId: "1:642372080719:web:21148d6bb0088847fd063a",
+        measurementId: "G-JGHTHZCFCF"
+        };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	  console.log(app);
+
+	  
+
+	  //----- New Registration code start	  
+	  document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  //For new registration
+		  createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    // alert("Registration successfully!!");
+            var temp_url="running.html";
+            window.location.replace(temp_url);
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    // ..
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+	  //----- End
+	</script>
+</body>
+<script>
+    
+</script>
+</html>

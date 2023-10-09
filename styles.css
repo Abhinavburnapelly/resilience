@@ -1,0 +1,147 @@
+.navigation {
+    display: flex;
+    
+    justify-content: flex-end; 
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    left: -5px;
+    right: 50px;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: blue;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.btn-login-popup {
+    width: 110px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    font-weight: 500;
+    transition: .5s; 
+    right: 170px;
+    margin: 20px;
+}
+
+.btn-login-popup:hover{
+    background: burlywood;
+    color: black;
+}
+
+header{
+    background-color: #fff;
+    border-radius:15px;
+    height:75px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    
+}
+body{
+    background: linear-gradient(to right,rgba(129, 137, 247, 0.968),rgb(42, 42, 247));
+}
+header h1 {
+    font-size: 50px; 
+    font-family: "sans-serif"; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.item-text{
+    /* background-image: url('https://img.freepik.com/free-photo/couple-training-together-gym_651396-1076.jpg?w=996&t=st=1695035166~exp=1695035766~hmac=7fde530686759f7cd7c4dcbad37c04234010b3e3cdea06c45ab46f71aaa45625'); */
+    height: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+}
+.items{
+    padding: 10px 10px;
+    
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid rgb(131, 135, 135); */
+    margin: 20px 10px;
+    /* padding: 10px 10px; */
+    /* border-color: black; */
+    border-width: 2px;
+    box-shadow: 10px 10px 1px rgb(191, 220, 230) ;
+    border-radius: 10px;
+    color: white;
+}
+.full-page{
+    background-color: rgb(229, 240, 251);
+    width: 10px 10px;
+    margin: 80px 90px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    font-size:medium;
+    
+}
+img,button.btn-item{
+    width: 100%;
+    opacity: 0.95;
+    height: 20%;
+
+    border-radius: 10px;
+    border-color: white;
+}
+img#More{
+    font-size: 50px;
+    opacity: 0.3;
+}
+footer{
+
+    background-color:rgba(105, 197, 236, 0.37);
+    border-radius:15px;
+    height:75px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+img{
+    height: 300px;
+    width: 400px;
+    position: relative;
+    right: 420px;
+
+}
+.k{
+    text-decoration: none;
+    
+}

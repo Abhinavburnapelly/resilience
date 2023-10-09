@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.back{
+    background-color: rgb(23, 100, 201);
+    height: 30vh;
+}
+.color{
+    font-family:"Bree sherif" ;
+    padding: 10px;
+    color: white;
+    margin: 30px;
+}
+.gap{
+    padding: 10px;
+}
+.gap1{
+    padding: 10px;
+    color: bisque;
+    font-family:"Bree sherif" ;
+}
+.back1{
+    background-color:white;
+    border-radius: 5px;
+    height: 150px;
+    margin:20px;
+    padding: 10px;
+    background-size: cover;
+}
+.pad{
+    padding: 19.5px;
+    border-radius: 20px;
+    width: 10px
+    
+}
+* .div2{
+    /* background-image: url('https://img.freepik.com/free-photo/couple-training-together-gym_651396-1076.jpg?w=996&t=st=1695035166~exp=1695035766~hmac=7fde530686759f7cd7c4dcbad37c04234010b3e3cdea06c45ab46f71aaa45625'); */
+    height: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+header{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+h3{
+    margin: 10px 10px;
+    padding: 10px 10px;
+    display: flex;
+    
+}
+
+.full-page{
+    background-color: rgb(229, 240, 251);
+    width: 10px 10px;
+    margin: 80px;
+    border-radius: 10px;
+    font-size: small;
+}
+.items{
+    padding: 10px 10px;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(131, 135, 135);
+    margin: 20px 10px;
+    padding: 10px 10px;
+    box-shadow: 10px 10px 1px rgb(191, 220, 230) ;
+    border-radius: 10px;
+
+}
+.coin{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 28px; 
+    right: 18px;  
+    border-radius: 5px;
+}
+.h3{
+    color: blue;
+    
+}
